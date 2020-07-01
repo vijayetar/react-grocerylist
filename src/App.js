@@ -25,8 +25,6 @@ class App extends React.Component {
     this.itemCreateHandler = this.itemCreateHandler.bind(this);
   }
   itemCreateHandler(fruity){
-    console.log("tis is friuitu", fruity.itemname)
-    alert(fruity.itemname);
     const updatedGroceryList = this.state.groceryList;
     updatedGroceryList.push({id:(this.state.groceryList.length)+1, name:fruity.itemname, type:fruity.itemtype, quantity:fruity.itemquantity})
     this.setState({
@@ -69,7 +67,7 @@ function RenderGroceryList(props){
 }
 
 function ListTheGroceryItem(props){
-  return <li>Please buy {props.what.quantity} {props.what.type}: {props.what.name}</li>
+  return <li>{props.what.id}.  Please buy {props.what.quantity} {props.what.type}: {props.what.name}</li>
 }
 
 class AddGroceryForm extends React.Component{
